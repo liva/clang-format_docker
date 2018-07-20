@@ -1,4 +1,7 @@
 FROM alpine
 
-RUN apk update
-RUN apk add clang
+RUN apk update \
+ && apk add clang \
+ && mv /usr/bin/clang-format . \
+ && rm /usr/bin/clang* \
+ && mv clang-format /usr/bin

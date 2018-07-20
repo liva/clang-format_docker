@@ -1,7 +1,4 @@
-FROM alpine AS base
+FROM alpine
 
 RUN apk update
 RUN apk add clang
-
-FROM alpine
-COPY --from=base /usr/bin/clang-format /usr/bin
